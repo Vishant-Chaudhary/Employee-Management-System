@@ -1,6 +1,25 @@
+import { useState } from "react";
 import { FaLock } from "react-icons/fa";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import type { AppDispatch, RootState } from "../../store/store";
+import { loginRequest } from "../../store/userSlice";
 
 const Login = () => {
+    const [email, setEmail] = useState("");
+    const [password, setpassword] = useState("");
+    const dispatch = useDispatch<AppDispatch>();
+    const navigate = useNavigate();
+    const { role, loading, error } = useSelector((state: RootState) => state.user)
+
+    const handleLogin = (e: React.FormEvent) => {
+        e.preventDefault();
+        dispatch(loginRequest({ email, password }));
+    }
+
+    if (role === "admin") navigate("/adminDashboard");
+    if (role === "employee") navigate("/employeeDashboard");
+
     return (
         <div>
             <div className="flex h-screen w-screen items-center justify-center bg-gradient-to-br from-emerald-50 to-white">
@@ -13,12 +32,15 @@ const Login = () => {
                         <p className="text-emerald-600 text-sm mt-1">Sign in to continue to your account</p>
                     </div>
                     <form
+                        onSubmit={handleLogin}
                         className="flex flex-col mt-3 space-y-4">
                         <div className="flex flex-col">
                             <label htmlFor="Email" className="text-sm font-medium text-emerald-700 mb-2">Email</label>
                             <input
                                 required
                                 id="Email"
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
                                 type="email"
                                 placeholder="Enter your email"
                                 className="w-full bg-emerald-50 outline-none border-2 border-emerald-500 py-3 px-5 rounded-full placeholder-emerald-400 text-emerald-700 focus:ring-2 focus:ring-emerald-300"
@@ -29,6 +51,8 @@ const Login = () => {
                             <input
                                 required
                                 id="Password"
+                                value={password}
+                                onChange={(e) => setpassword(e.target.value)}
                                 type="password"
                                 placeholder="Enter your password"
                                 className="w-full bg-emerald-50 outline-none border-2 border-emerald-500 py-3 px-5 rounded-full placeholder-emerald-400 text-emerald-700 focus:ring-2 focus:ring-emerald-300"
@@ -36,10 +60,12 @@ const Login = () => {
                         </div>
                         <button
                             type="submit"
+                            disabled={loading}
                             className="w-full text-white bg-emerald-600 hover:bg-emerald-700 py-3 px-5 rounded-full mt-2 transition duration-200"
                         >
-                            Log in
+                            {loading ? "logging in.." : "Login"}
                         </button>
+                        {error && <p className="text-red-500 mt-3 text-center">{error}</p>}
                     </form>
                 </div>
             </div>
