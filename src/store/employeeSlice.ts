@@ -21,6 +21,14 @@ const employeeSlice = createSlice({
         fetchEmployeeFailure: (state) => {
             state.loading = false;
         },
+        addTaskSuccess: (state, action) => {
+            const { employeeId, newTask } = action.payload;
+            const employee = state.data.find((e) => e.id === employeeId);
+            if (employee) {
+                employee.tasks.push(newTask);
+                employee.taskCount.newTask += 1;
+            }
+        },
         updateEmployeeRequest: () => { },
         updateEmployeeSuccess: (state, action) => {
             const index = state.data.findIndex((e) => e.id === action.payload.id);
@@ -35,6 +43,7 @@ export const {
     fetchEmployeeFailure,
     updateEmployeeRequest,
     updateEmployeeSuccess,
+    addTaskSuccess,
 } = employeeSlice.actions;
 
 export default employeeSlice.reducer;
