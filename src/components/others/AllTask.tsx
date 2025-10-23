@@ -1,10 +1,10 @@
-const AllTask = () => {
-    const data = [
-        { name: "Vishant", new: 1, active: 1, completed: 1, failed: 0 },
-        { name: "Riya", new: 2, active: 1, completed: 3, failed: 1 },
-        { name: "Arjun", new: 1, active: 2, completed: 0, failed: 1 },
-        { name: "Sneha", new: 3, active: 2, completed: 2, failed: 0 },
-    ];
+import type { Employee } from "../model/Interface"; 
+
+interface AllTaskProps {
+    employees: Employee[];
+}
+
+const AllTask: React.FC<AllTaskProps> = ({ employees }) => {
 
     return (
         <section className="bg-white rounded-lg shadow-md p-6">
@@ -20,16 +20,16 @@ const AllTask = () => {
                     <h5>Failed</h5>
                 </div>
 
-                {data.map((emp, i) => (
+                {employees.map((emp) => (
                     <div
-                        key={i}
+                        key={emp.id}
                         className="grid grid-cols-5 py-2 px-4 border-b border-gray-200 hover:bg-emerald-50 transition"
                     >
                         <h5 className="font-medium text-gray-800">{emp.name}</h5>
-                        <h5 className="text-blue-600 font-medium">{emp.new}</h5>
-                        <h5 className="text-amber-600 font-medium">{emp.active}</h5>
-                        <h5 className="text-emerald-600 font-semibold">{emp.completed}</h5>
-                        <h5 className="text-red-500 font-semibold">{emp.failed}</h5>
+                        <h5 className="text-blue-600 font-medium">{emp.taskCount.newTask}</h5>
+                        <h5 className="text-amber-600 font-medium">{emp.taskCount.active}</h5>
+                        <h5 className="text-emerald-600 font-semibold">{emp.taskCount.completed}</h5>
+                        <h5 className="text-red-500 font-semibold">{emp.taskCount.failed}</h5>
                     </div>
                 ))}
             </div>
