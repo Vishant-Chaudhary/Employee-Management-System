@@ -1,10 +1,15 @@
-import type { Employee } from "../model/Interface"; 
+import type { Employee } from "../model/Interface";
 
 interface AllTaskProps {
     employees: Employee[];
 }
 
 const AllTask: React.FC<AllTaskProps> = ({ employees }) => {
+    const countTasks = (tasks: any[] = [], type: string) => {
+        return tasks.filter(t => t && t[type]).length;
+    };
+
+    if (!employees?.length) return <p className="text-center text-emerald-600">No employees found.</p>;
 
     return (
         <section className="bg-white rounded-lg shadow-md p-6">
@@ -20,16 +25,16 @@ const AllTask: React.FC<AllTaskProps> = ({ employees }) => {
                     <h5>Failed</h5>
                 </div>
 
-                {employees.map((emp) => (
+                {employees.map(emp => (
                     <div
                         key={emp.id}
                         className="grid grid-cols-5 py-2 px-4 border-b border-gray-200 hover:bg-emerald-50 transition"
                     >
                         <h5 className="font-medium text-gray-800">{emp.name}</h5>
-                        <h5 className="text-blue-600 font-medium">{emp.taskCount.newTask}</h5>
-                        <h5 className="text-amber-600 font-medium">{emp.taskCount.active}</h5>
-                        <h5 className="text-emerald-600 font-semibold">{emp.taskCount.completed}</h5>
-                        <h5 className="text-red-500 font-semibold">{emp.taskCount.failed}</h5>
+                        <h5 className="text-blue-600 font-medium">{countTasks(emp.tasks, "newTask")}</h5>
+                        <h5 className="text-amber-600 font-medium">{countTasks(emp.tasks, "active")}</h5>
+                        <h5 className="text-emerald-600 font-semibold">{countTasks(emp.tasks, "completed")}</h5>
+                        <h5 className="text-red-500 font-semibold">{countTasks(emp.tasks, "failed")}</h5>
                     </div>
                 ))}
             </div>

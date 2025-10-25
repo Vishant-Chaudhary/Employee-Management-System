@@ -10,6 +10,7 @@ import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 
 function App() {
   const { role } = useSelector((state: RootState) => state.user);
+
   return (
     <BrowserRouter>
       <Routes>

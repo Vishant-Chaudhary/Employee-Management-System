@@ -14,6 +14,7 @@ const AdminDashboard = () => {
     const dispatch = useDispatch<AppDispatch>();
     const { data, loading } = useSelector((state: RootState) => state.employees);
 
+
     useEffect(() => {
         dispatch(fetchEmployeesRequest());
     }, [dispatch]);

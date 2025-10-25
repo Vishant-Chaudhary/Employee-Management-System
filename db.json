@@ -9,10 +9,11 @@
         "active": 1,
         "completed": 1,
         "failed": 0,
-        "newTask": 2
+        "newTask": 1
       },
       "tasks": [
         {
+          "id": "task-1-1",
           "title": "Update Landing Page UI",
           "description": "Improve header and footer design using Figma mockups.",
           "date": "2025-10-05",
@@ -23,24 +24,48 @@
           "failed": false
         },
         {
+          "id": "task-1-2",
           "title": "Fix Login Validation",
           "description": "Resolve email validation bug in frontend form.",
           "date": "2025-10-02",
           "category": "Development",
-          "active": false,
+          "active": true,
           "newTask": false,
-          "completed": true,
+          "completed": false,
           "failed": false
         },
         {
+          "id": "task-1-3",
           "title": "Write API Docs",
           "description": "Add endpoint documentation for user and auth routes.",
           "date": "2025-10-06",
           "category": "Documentation",
+          "active": true,
+          "newTask": false,
+          "completed": false,
+          "failed": false
+        },
+        {
+          "title": "Design a UI",
+          "description": "Design a login page UI",
+          "date": "2025-10-24",
+          "category": "design",
+          "active": false,
+          "newTask": false,
+          "completed": true,
+          "failed": false,
+          "id": "b6469b05-aae2-4ee6-98c8-184fd2fe7645"
+        },
+        {
+          "title": "Create a component",
+          "description": "Create a react component to calculate array length",
+          "date": "2025-10-25",
+          "category": "development",
           "active": false,
           "newTask": true,
           "completed": false,
-          "failed": false
+          "failed": false,
+          "id": "d36be625-b006-4957-a2c9-23ac600cd1e4"
         }
       ]
     },
@@ -57,6 +82,7 @@
       },
       "tasks": [
         {
+          "id": "task-2-1",
           "title": "Integrate Redux Toolkit",
           "description": "Refactor state management with Redux Toolkit slices.",
           "date": "2025-10-04",
@@ -67,6 +93,7 @@
           "failed": false
         },
         {
+          "id": "task-2-2",
           "title": "Setup Unit Testing",
           "description": "Add Jest tests for API calls and reducers.",
           "date": "2025-10-07",
@@ -77,6 +104,7 @@
           "failed": false
         },
         {
+          "id": "task-2-3",
           "title": "Optimize Images",
           "description": "Reduce homepage image size for faster load time.",
           "date": "2025-09-29",
@@ -87,6 +115,7 @@
           "failed": false
         },
         {
+          "id": "task-2-4",
           "title": "Resolve Deployment Issue",
           "description": "Fix Netlify build environment variable error.",
           "date": "2025-10-03",
@@ -111,6 +140,7 @@
       },
       "tasks": [
         {
+          "id": "task-3-1",
           "title": "Create Navbar Component",
           "description": "Build reusable navigation bar using TypeScript.",
           "date": "2025-10-01",
@@ -121,6 +151,7 @@
           "failed": false
         },
         {
+          "id": "task-3-2",
           "title": "Design Login Flow",
           "description": "Prepare flow diagram for authentication screens.",
           "date": "2025-10-06",
@@ -131,6 +162,7 @@
           "failed": false
         },
         {
+          "id": "task-3-3",
           "title": "API Response Handling",
           "description": "Add error handling and response interceptors.",
           "date": "2025-10-05",
@@ -141,6 +173,7 @@
           "failed": true
         },
         {
+          "id": "task-3-4",
           "title": "Dark Mode Support",
           "description": "Implement dark mode toggle for the dashboard.",
           "date": "2025-10-07",
@@ -151,6 +184,7 @@
           "failed": false
         },
         {
+          "id": "task-3-5",
           "title": "Add 404 Page",
           "description": "Create a 404 not found page for invalid routes.",
           "date": "2025-09-30",
@@ -175,6 +209,7 @@
       },
       "tasks": [
         {
+          "id": "task-4-1",
           "title": "Client Feedback Fixes",
           "description": "Implement all feedback from client’s recent review.",
           "date": "2025-10-03",
@@ -185,6 +220,7 @@
           "failed": false
         },
         {
+          "id": "task-4-2",
           "title": "Write SEO Metadata",
           "description": "Add meta titles and descriptions for key pages.",
           "date": "2025-10-02",
@@ -195,6 +231,7 @@
           "failed": false
         },
         {
+          "id": "task-4-3",
           "title": "Enhance Accessibility",
           "description": "Add ARIA labels and keyboard navigation support.",
           "date": "2025-10-06",
@@ -219,6 +256,7 @@
       },
       "tasks": [
         {
+          "id": "task-5-1",
           "title": "Set Up Analytics",
           "description": "Integrate Google Analytics 4 for tracking.",
           "date": "2025-10-01",
@@ -229,6 +267,7 @@
           "failed": false
         },
         {
+          "id": "task-5-2",
           "title": "Social Media Buttons",
           "description": "Add share buttons to blog posts.",
           "date": "2025-10-05",
@@ -239,6 +278,7 @@
           "failed": false
         },
         {
+          "id": "task-5-3",
           "title": "Fix Broken Links",
           "description": "Audit and repair all broken internal links.",
           "date": "2025-10-04",
@@ -249,6 +289,7 @@
           "failed": true
         },
         {
+          "id": "task-5-4",
           "title": "Content Upload",
           "description": "Add 10 new articles to the knowledge base.",
           "date": "2025-10-07",
