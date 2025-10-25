@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FaLock } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
@@ -17,8 +17,13 @@ const Login = () => {
         dispatch(loginRequest({ email, password }));
     }
 
-    if (role === "admin") navigate("/adminDashboard");
-    if (role === "employee") navigate("/employeeDashboard");
+    useEffect(() => {
+        if (role === "admin") {
+            navigate("/adminDashboard");
+        } else if (role === "employee") {
+            navigate("/employeeDashboard");
+        }
+    }, [role, navigate]);
 
     return (
         <div>
