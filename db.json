@@ -18,9 +18,9 @@
           "description": "Improve header and footer design using Figma mockups.",
           "date": "2025-10-05",
           "category": "Design",
-          "active": true,
+          "active": false,
           "newTask": false,
-          "completed": false,
+          "completed": true,
           "failed": false
         },
         {
@@ -40,10 +40,10 @@
           "description": "Add endpoint documentation for user and auth routes.",
           "date": "2025-10-06",
           "category": "Documentation",
-          "active": true,
+          "active": false,
           "newTask": false,
           "completed": false,
-          "failed": false
+          "failed": true
         },
         {
           "title": "Design a UI",
