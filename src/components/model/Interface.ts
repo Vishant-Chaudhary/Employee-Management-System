@@ -1,4 +1,5 @@
 export interface Task {
+    id: string ;
     title: string;
     description: string;
     date: string;
@@ -17,7 +18,7 @@ export interface TaskCount {
 }
 
 export interface Employee {
-    id: number;
+    id: string;
     name: string;
     email: string;
     password: string;
@@ -28,10 +29,11 @@ export interface Employee {
 export interface EmployeeState {
     data: Employee[];
     loading: boolean;
+    error?: string | null;
 }
 
 export interface user {
-    id: number;
+    id: string;
     name: string;
     email: string;
     password: string;

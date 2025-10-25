@@ -48,7 +48,7 @@ const CreateTask = () => {
 
         dispatch({
             type: "tasks/addTaskRequest",
-            payload: { employeeId: employee.id, newTask },
+            payload: { employeeId: employee.id, task: newTask },
         });
 
         setFormData({ title: "", date: "", assignedTo: "", category: "", description: "" });
@@ -60,13 +60,13 @@ const CreateTask = () => {
             <h2 className="text-xl font-semibold text-emerald-700 mb-4">Create New Task</h2>
             <form
                 onSubmit={handleSubmit}
-             className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-4">
                     <div>
                         <label className="block text-sm font-medium text-gray-700 mb-1">Task Title</label>
                         <input
-                            name="title" 
-                            value={formData.title} 
+                            name="title"
+                            value={formData.title}
                             onChange={handleChange}
                             type="text"
                             placeholder="Enter task title"
@@ -77,7 +77,7 @@ const CreateTask = () => {
                         <label className="block text-sm font-medium text-gray-700 mb-1">Date</label>
                         <input
                             name="date"
-                            value={formData.date} 
+                            value={formData.date}
                             onChange={handleChange}
                             type="date"
                             className="w-full border border-gray-300  placeholder-gray-400 text-gray-800 rounded-md px-3 py-2 focus:ring-2 focus:ring-emerald-500 focus:outline-none"
@@ -86,8 +86,8 @@ const CreateTask = () => {
                     <div>
                         <label className="block text-sm font-medium text-gray-700 mb-1">Assign To</label>
                         <input
-                            name="assignedTo" 
-                            value={formData.assignedTo} 
+                            name="assignedTo"
+                            value={formData.assignedTo}
                             onChange={handleChange}
                             type="text"
                             placeholder="Employee name"
@@ -97,8 +97,8 @@ const CreateTask = () => {
                     <div>
                         <label className="block text-sm font-medium text-gray-700 mb-1">Category</label>
                         <input
-                            name="category" 
-                            value={formData.category} 
+                            name="category"
+                            value={formData.category}
                             onChange={handleChange}
                             type="text"
                             placeholder="design, dev, etc"
