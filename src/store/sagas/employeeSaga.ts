@@ -15,19 +15,14 @@ function getTaskCount(tasks: any[]) {
 
 function* fetchEmployeesSaga(): any {
     try {
-        console.log("Saga triggered");
         const res = yield call(axiosClient.get, "/employees");
-        console.log("Employees API response:", res);
 
         const processed = res.data.map((emp: any) => ({
             ...emp,
             taskCount: getTaskCount(emp.tasks || []),
         }));
-        console.log("Processed data:", processed);
         yield put(fetchEmployeesSuccess(processed));
-        console.log("Fetch success dispatched");
     } catch (error) {
-        console.error("Employee saga error caught:", error);
         yield put(fetchEmployeesFailure("Failed to fetch employees"));
     }
 }
